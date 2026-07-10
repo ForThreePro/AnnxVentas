@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Caligrafos by @annx.llv</title>
+  <title>Caligrafícos by @annx.llvl</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;500&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;500;600&display=swap');
     
     * { margin: 0; padding: 0; box-sizing: border-box; }
     
@@ -30,7 +30,7 @@
     
     .logo {
       font-family: 'Playfair Display', serif;
-      font-size: 10vw;
+      font-size: 9vw;
       background: linear-gradient(90deg, #C084FC, #A855F7, #9333EA);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
@@ -53,30 +53,32 @@
       font-size: 5vw;
       font-weight: 600;
       color: #7E22CE;
-      margin-bottom: 10px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      justify-content: center;
-    }
-    
-    .price {
-      font-size: 8vw;
-      font-weight: 600;
-      color: #9333EA;
+      margin-bottom: 15px;
       text-align: center;
-      margin: 15px 0;
     }
     
-    .btn-group { display: flex; flex-direction: column; gap: 12px; }
+    .item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 0;
+      border-bottom: 1px dashed #D8B4FE;
+      font-size: 4vw;
+    }
+    
+    .item:last-child { border: none; }
+    
+    .price { color: #9333EA; font-weight: 600; }
     
     .btn {
       padding: 15px;
       border-radius: 15px;
       text-decoration: none;
-      font-weight: 500;
+      font-weight: 600;
       font-size: 4.5vw;
       text-align: center;
+      display: block;
+      margin-top: 15px;
       transition: 0.3s;
     }
     
@@ -94,13 +96,6 @@
     
     .btn:hover { transform: translateY(-2px); }
     
-    .info {
-      text-align: center;
-      font-size: 3.5vw;
-      margin: 20px 0;
-      color: #7E22CE;
-    }
-    
     .pagos {
       text-align: center;
       font-size: 3.8vw;
@@ -108,9 +103,9 @@
     }
     
     @media (min-width: 600px) {
-      .logo { font-size: 45px; }
-      .user, .card-title, .btn, .info, .pagos { font-size: 16px; }
-      .price { font-size: 35px; }
+      .logo { font-size: 40px; }
+      .user, .item, .btn, .pagos { font-size: 16px; }
+      .card-title { font-size: 20px; }
     }
   </style>
 </head>
@@ -119,43 +114,42 @@
   <div class="container">
     
     <div class="header">
-      <h1 class="logo">𝙲𝚊𝚕𝚒𝚐𝚛𝚊𝚏𝚘𝚜</h1>
-      <p class="user">@annx.llv 𓆩♡𓆪</p>
+      <h1 class="logo">𝙲𝚊𝚕𝚒𝚐𝚛𝚊𝚏𝚒́𝚌𝚘𝚜</h1>
+      <p class="user">@annx.llvl 𓆩♡𓆪</p>
     </div>
 
     <div class="card">
-      <h2 class="card-title">𖹭.ᐟ 𝚃𝚎𝚖𝚊́𝚝𝚒𝚌𝚘𝚜 𝙿𝚛𝚎𝚖𝚒𝚞𝚖</h2>
-      <p style="text-align:center; font-size:3.5vw; margin-bottom:10px;">curvos - objeto c/u</p>
-      <p class="price">S/20.00</p>
-      <p style="text-align:center; font-size:4vw; color:#9333EA; margin-bottom:15px;">𝟻𝘗𝘌𝘕 .ᐟ 𝟸𝟶 💎</p>
-      
-      <div class="btn-group">
-        <a class="btn btn-yape" href="https://www.yape.com.pe/qr/932712628?amount=20.00&concept=Caligrafia%20Premium">💜 Pagar con Yape</a>
-        <a class="btn btn-wa" href="https://wa.me/message/2BUTTKQYZXH4K1">📲 Consultar</a>
+      <h2 class="card-title">𖹭.ᐟ 𝚃𝚎𝚖𝚊́𝚝𝚒𝚌𝚘𝚜</h2>
+      <div class="item">
+        <span>Curvos</span>
+        <span class="price">S/5 / 200 💎</span>
       </div>
+      <div class="item">
+        <span>Objeto</span>
+        <span class="price">S/5 / 200 💎</span>
+      </div>
+      <a class="btn btn-yape" href="https://www.yape.com.pe/qr/932712628?amount=5.00&concept=Caligrafia%20Tematica">💜 Pagar S/5 con Yape</a>
     </div>
 
     <div class="card">
-      <h2 class="card-title">𖹭.ᐟ 𝚂𝚒𝚖𝚙𝚕𝚎 𝙴𝚕𝚎𝚐𝚊𝚗𝚝𝚎</h2>
-      <p style="text-align:center; font-size:3.5vw; margin-bottom:10px;">c/u</p>
-      <p class="price">S/10.00</p>
-      <p style="text-align:center; font-size:4vw; color:#9333EA; margin-bottom:15px;">𝟹𝘗𝘌𝘕 .ᐟ 𝟷𝟶𝟶 💎</p>
-      
-      <div class="btn-group">
-        <a class="btn btn-yape" href="https://www.yape.com.pe/qr/932712628?amount=10.00&concept=Caligrafia%20Simple">💜 Pagar con Yape</a>
-        <a class="btn btn-wa" href="https://wa.me/message/2BUTTKQYZXH4K1">📲 Consultar</a>
+      <h2 class="card-title">𖹭.ᐟ 𝚂𝚒𝚖𝚙𝚕𝚎</h2>
+      <div class="item">
+        <span>c/u</span>
+        <span class="price">S/3 / 100 💎</span>
       </div>
+      <a class="btn btn-yape" href="https://www.yape.com.pe/qr/932712628?amount=3.00&concept=Caligrafia%20Simple">💜 Pagar S/3 con Yape</a>
     </div>
 
-    <p class="info">𝙿𝚊𝚛𝚊 𝚛𝚎𝚏𝚎𝚛𝚎𝚗𝚌𝚒𝚊𝚜 𝚘 𝚖𝚘𝚗𝚎𝚍𝚊𝚜 𝚎𝚜𝚌𝚛𝚒́𝚋𝚎𝚖𝚎 𝚊𝚕 𝚙𝚛𝚒𝚟 ✨</p>
+    <a class="btn btn-wa" href="https://wa.me/message/2BUTTKQYZXH4K1">📲 Pedir por WhatsApp</a>
 
     <div class="card pagos">
-      <h3 style="color:#7E22CE; margin-bottom:10px;">Métodos de pago</h3>
+      <h3 style="color:#7E22CE; margin-bottom:10px;">Métodos De Pago</h3>
       <p><b>Yape 💜</b><br>
       932 712 628<br>
-      Elíseo B.<br><br>
-      1434157249<br>
-      BabyㅤAnnㅤଓ 💎</p>
+      Eliseo B.<br><br>
+      <b>Diamantes 💎</b><br>
+      id : 1434157249<br>
+      Name : Baby Ann</p>
     </div>
 
   </div>
