@@ -3,245 +3,245 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Annx Lettering Store</title>
+  <title>Ann by Lettering</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Inter:wght@400;500;700&display=swap');
-
-    :root {
-      --bg1: #0A0A1A;
-      --bg2: #1A0B2E;
-      --accent: #00F5FF;
-      --accent2: #FF00E5;
-      --text: #E0E0FF;
-    }
+    @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@400;500;600&display=swap');
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body { 
-      background: radial-gradient(circle at 50% 50%, var(--bg2), var(--bg1));
-      font-family: 'Inter', sans-serif;
-      color: var(--text);
+      background: #FFF8FC;
+      background-image: radial-gradient(#FAD4E6 1px, transparent 1px);
+      background-size: 30px 30px;
+      font-family: 'Montserrat', sans-serif;
+      color: #8A4A6B;
       min-height: 100vh;
-      overflow-x: hidden;
     }
 
-    /* PARTICULAS NEON */
-    .particle {
+    /* FLORES CAYENDO */
+    .petal {
       position: fixed;
-      width: 3px;
-      height: 3px;
-      background: var(--accent);
-      border-radius: 50%;
-      box-shadow: 0 0 8px var(--accent);
-      animation: float 8s infinite linear;
+      top: -20px;
+      font-size: 20px;
+      animation: fallPetals linear infinite;
       z-index: 0;
     }
 
-    @keyframes float {
-      from { transform: translateY(100vh) scale(0); opacity: 0; }
-      to { transform: translateY(-10vh) scale(1); opacity: 1; }
+    @keyframes fallPetals {
+      to { transform: translateY(100vh) rotate(720deg); opacity: 0; }
     }
 
-    .wrap {
-      max-width: 520px;
+    .main {
+      max-width: 480px;
       margin: 0 auto;
-      padding: 40px 18px;
+      padding: 35px 20px;
       position: relative;
       z-index: 1;
     }
 
-    .top { text-align: center; margin-bottom: 35px; }
+    .head { text-align: center; margin-bottom: 30px; }
 
-    .brand {
-      font-family: 'Orbitron', sans-serif;
-      font-size: 10vw;
-      background: linear-gradient(90deg, var(--accent), var(--accent2));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      filter: drop-shadow(0 0 15px var(--accent));
-      letter-spacing: 2px;
+    .title {
+      font-family: 'Great Vibes', cursive;
+      font-size: 12vw;
+      color: #E86BA4;
+      text-shadow: 0 2px 10px rgba(232, 107, 164, 0.2);
     }
 
-    .handle { font-size: 4vw; color: var(--accent); opacity: 0.8; }
+    .subtitle { font-size: 4vw; color: #C77A9E; letter-spacing: 1px; }
 
-    .box {
-      background: rgba(10, 10, 26, 0.7);
-      border: 1px solid rgba(0, 245, 255, 0.3);
-      border-radius: 20px;
-      padding: 22px;
-      margin: 18px 0;
-      backdrop-filter: blur(20px);
-      box-shadow: 0 0 25px rgba(0, 245, 255, 0.1);
+    .frame {
+      background: white;
+      border-radius: 30px;
+      padding: 24px;
+      margin: 20px 0;
+      border: 2px solid #FAD4E6;
+      box-shadow: 0 5px 25px rgba(232, 107, 164, 0.15);
+      position: relative;
     }
 
-    .box h2 {
-      font-family: 'Orbitron', sans-serif;
-      font-size: 5vw;
-      color: var(--accent);
+    .frame::before {
+      content: '❀';
+      position: absolute;
+      top: -15px;
+      left: 20px;
+      background: white;
+      padding: 0 10px;
+      font-size: 24px;
+      color: #E86BA4;
+    }
+
+    .section-name {
+      font-family: 'Great Vibes', cursive;
+      font-size: 6vw;
+      color: #E86BA4;
       text-align: center;
-      margin-bottom: 14px;
+      margin-bottom: 16px;
     }
 
-    .row {
+    .line {
       display: flex;
       justify-content: space-between;
       padding: 10px 0;
-      border-bottom: 1px solid rgba(255, 0, 229, 0.2);
       font-size: 4vw;
+      border-bottom: 1px dotted #FAD4E6;
     }
 
-    .row:last-child { border: none; }
-    .cost { color: var(--accent2); font-weight: 700; }
+    .line:last-child { border: none; }
+    .amount { color: #D946A0; font-weight: 600; }
 
-    .cta {
+    .button {
       padding: 14px;
-      border-radius: 12px;
+      border-radius: 50px;
       text-decoration: none;
-      font-weight: 700;
+      font-weight: 600;
       font-size: 4.2vw;
       text-align: center;
       display: block;
-      margin-top: 14px;
+      margin-top: 16px;
       border: none;
       cursor: pointer;
       width: 100%;
-      transition: 0.2s;
-      font-family: 'Orbitron', sans-serif;
+      transition: 0.3s;
     }
 
-    .cta-buy {
-      background: linear-gradient(90deg, var(--accent), var(--accent2));
-      color: #0A0A1A;
-      box-shadow: 0 0 20px rgba(0, 245, 255, 0.5);
+    .button-pink {
+      background: linear-gradient(90deg, #F472B6, #EC4899);
+      color: white;
+      box-shadow: 0 4px 15px rgba(236, 72, 153, 0.3);
     }
 
-    .cta-buy:hover { transform: scale(1.03); }
+    .button-pink:hover { transform: translateY(-2px); }
 
-    .cta-wa {
-      background: transparent;
-      color: var(--accent);
-      border: 2px solid var(--accent);
+    .button-white {
+      background: white;
+      color: #EC4899;
+      border: 2px solid #F472B6;
     }
 
-    /* POPUP */
-    .popup {
+    /* MODAL SUAVE */
+    .overlay {
       display: none;
       position: fixed;
       z-index: 999;
       left: 0; top: 0;
       width: 100%; height: 100%;
-      background: rgba(0,0,0,0.8);
+      background: rgba(138, 74, 107, 0.3);
+      backdrop-filter: blur(4px);
       justify-content: center;
       align-items: center;
     }
 
-    .popup-box {
-      background: #0A0A1A;
-      border: 2px solid var(--accent);
-      border-radius: 20px;
-      padding: 24px;
+    .box-pay {
+      background: #FFF8FC;
+      border: 2px solid #FAD4E6;
+      border-radius: 25px;
+      padding: 25px;
       width: 90%;
       max-width: 380px;
       text-align: center;
-      box-shadow: 0 0 40px var(--accent2);
+      box-shadow: 0 10px 40px rgba(232, 107, 164, 0.3);
     }
 
-    .popup-box h3 { color: var(--accent); margin-bottom: 12px; font-family: 'Orbitron'; }
-    .num-box {
-      background: #1A0B2E;
-      padding: 10px;
-      border-radius: 10px;
-      font-weight: 700;
+    .box-pay h3 { color: #E86BA4; font-family: 'Great Vibes'; font-size: 7vw; margin-bottom: 12px; }
+    .pay-number {
+      background: #FAD4E6;
+      padding: 12px;
+      border-radius: 15px;
+      font-weight: 600;
       margin: 10px 0;
       font-size: 4.5vw;
-      color: var(--accent2);
+      color: #8A4A6B;
     }
 
-    .btn-copy { background: var(--accent2); color: #0A0A1A; margin-bottom: 10px; }
-    .btn-yape { background: var(--accent); color: #0A0A1A; }
-    .close { margin-top: 12px; color: var(--accent); cursor: pointer; text-decoration: underline; }
+    .btn-copy { background: #F472B6; color: white; margin-bottom: 10px; }
+    .btn-yape { background: linear-gradient(90deg, #EC4899, #D946A0); color: white; }
+    .close-txt { margin-top: 12px; color: #C77A9E; cursor: pointer; text-decoration: underline; }
 
     @media (min-width: 600px) {
-      .brand { font-size: 42px; }
-      .handle, .row, .cta, .num-box { font-size: 16px; }
-      .box h2 { font-size: 20px; }
+      .title { font-size: 50px; }
+      .subtitle, .line, .button, .pay-number { font-size: 16px; }
+      .section-name { font-size: 28px; }
+      .box-pay h3 { font-size: 32px; }
     }
   </style>
 </head>
 <body>
 
-  <!-- PARTICULAS -->
+  <!-- PETALOS -->
   <script>
-    for(let i = 0; i < 40; i++) {
-      let p = document.createElement('div');
-      p.className = 'particle';
-      p.style.left = Math.random() * 100 + 'vw';
-      p.style.animationDuration = (Math.random() * 5 + 4) + 's';
-      p.style.animationDelay = Math.random() * 8 + 's';
-      document.body.appendChild(p);
+    const flowers = ['🌸','🌷','🌺','💮'];
+    for(let i = 0; i < 25; i++) {
+      let petal = document.createElement('div');
+      petal.className = 'petal';
+      petal.innerText = flowers[Math.floor(Math.random() * flowers.length)];
+      petal.style.left = Math.random() * 100 + 'vw';
+      petal.style.animationDuration = (Math.random() * 6 + 5) + 's';
+      petal.style.animationDelay = Math.random() * 8 + 's';
+      document.body.appendChild(petal);
     }
   </script>
 
-  <div class="wrap">
+  <div class="main">
 
-    <div class="top">
-      <h1 class="brand">ANNX LETTERING</h1>
-      <p class="handle">@annx.llvl ⚡</p>
+    <div class="head">
+      <h1 class="title">Ann</h1>
+      <p class="subtitle">@annx.llvl 𓆩♡𓆪</p>
     </div>
 
-    <div class="box">
-      <h2>PACK TEMÁTICOS</h2>
-      <div class="row"><span>Curvos</span><span class="cost">S/5 / 200 💎</span></div>
-      <div class="row"><span>Objeto</span><span class="cost">S/5 / 200 💎</span></div>
-      <button class="cta cta-buy" onclick="openPay('5.00', 'Pack Tematico')">⚡ COMPRAR AHORA</button>
+    <div class="frame">
+      <h2 class="section-name">Caligrafías Temáticas</h2>
+      <div class="line"><span>Curvos</span><span class="amount">S/5 / 200 💎</span></div>
+      <div class="line"><span>Objeto</span><span class="amount">S/5 / 200 💎</span></div>
+      <button class="button button-pink" onclick="showPay('5.00', 'Caligrafia Tematica')">💖 Comprar</button>
     </div>
 
-    <div class="box">
-      <h2>PACK SIMPLE</h2>
-      <div class="row"><span>c/u</span><span class="cost">S/3 / 100 💎</span></div>
-      <button class="cta cta-buy" onclick="openPay('3.00', 'Pack Simple')">⚡ COMPRAR AHORA</button>
+    <div class="frame">
+      <h2 class="section-name">Caligrafía Simple</h2>
+      <div class="line"><span>c/u</span><span class="amount">S/3 / 100 💎</span></div>
+      <button class="button button-pink" onclick="showPay('3.00', 'Caligrafia Simple')">💖 Comprar</button>
     </div>
 
-    <a class="cta cta-wa" href="https://wa.me/message/2BUTTKQYZXH4K1">💬 CONTACTO DIRECTO</a>
+    <a class="button button-white" href="https://wa.me/message/2BUTTKQYZXH4K1">💌 Escríbeme por WhatsApp</a>
 
   </div>
 
-  <!-- POPUP PAGO -->
-  <div id="payPopup" class="popup">
-    <div class="popup-box">
-      <h3>MÉTODOS DE PAGO</h3>
-      <p><b>YAPE</b></p>
-      <div class="num-box" id="yapeNum">932 712 628</div>
-      <p style="font-size:3.5vw; opacity:0.8;">Titular: Eliseo B.</p>
+  <!-- MODAL PAGO -->
+  <div id="payOverlay" class="overlay">
+    <div class="box-pay">
+      <h3>Métodos de Pago</h3>
+      <p><b>Yape</b></p>
+      <div class="pay-number" id="yapeNumber">932 712 628</div>
+      <p style="font-size:3.5vw;">A nombre de: Eliseo B.</p>
       
-      <button class="cta btn-copy" onclick="copyNum()">📋 COPIAR NÚMERO</button>
-      <a class="cta btn-yape" id="yapeLink" href="#">💜 PAGAR CON YAPE</a>
+      <button class="button btn-copy" onclick="copyYape()">📋 Copiar Número</button>
+      <a class="button btn-yape" id="yapeBtn" href="#">💜 Pagar con Yape</a>
       
-      <p style="margin-top:15px;"><b>DIAMANTES</b><br>
+      <p style="margin-top:15px;"><b>Diamantes 💎</b><br>
       ID: 1434157249<br>
       Nick: Baby Ann</p>
       
-      <p class="close" onclick="closePay()">Cerrar</p>
+      <p class="close-txt" onclick="hidePay()">Cerrar</p>
     </div>
   </div>
 
 <script>
-  function openPay(amount, item) {
-    document.getElementById('payPopup').style.display = 'flex';
-    document.getElementById('yapeLink').href = `https://www.yape.com.pe/qr/932712628?amount=${amount}&concept=${item}`;
+  function showPay(price, product) {
+    document.getElementById('payOverlay').style.display = 'flex';
+    document.getElementById('yapeBtn').href = `https://www.yape.com.pe/qr/932712628?amount=${price}&concept=${product}`;
   }
   
-  function closePay() {
-    document.getElementById('payPopup').style.display = 'none';
+  function hidePay() {
+    document.getElementById('payOverlay').style.display = 'none';
   }
   
-  function copyNum() {
+  function copyYape() {
     navigator.clipboard.writeText('932712628');
-    alert('Número copiado: 932 712 628 ⚡');
+    alert('Número copiado: 932 712 628 💖');
   }
   
   window.onclick = function(e) {
-    if (e.target == document.getElementById('payPopup')) closePay();
+    if (e.target == document.getElementById('payOverlay')) hidePay();
   }
 </script>
 
