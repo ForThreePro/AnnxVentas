@@ -44,10 +44,9 @@
       font-family: 'Great Vibes', cursive;
       font-size: 12vw;
       color: #E86BA4;
-      text-shadow: 0 2px 10px rgba(232, 107, 164, 0.2);
     }
 
-    .subtitle { font-size: 4vw; color: #C77A9E; letter-spacing: 1px; }
+    .subtitle { font-size: 4vw; color: #C77A9E; }
 
     .frame {
       background: white;
@@ -95,13 +94,37 @@
     .button-pink {
       background: linear-gradient(90deg, #F472B6, #EC4899);
       color: white;
-      box-shadow: 0 4px 15px rgba(236, 72, 153, 0.3);
     }
 
     .button-white {
       background: white;
       color: #EC4899;
       border: 2px solid #F472B6;
+    }
+
+    /* MINI BOTONES */
+    .mini-btns {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 8px;
+      margin: 15px 0;
+    }
+
+    .mini-btn {
+      padding: 10px 5px;
+      border-radius: 15px;
+      border: 2px solid #FAD4E6;
+      background: white;
+      color: #E86BA4;
+      font-size: 3.5vw;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .mini-btn:hover {
+      background: #FAD4E6;
+      transform: scale(1.05);
     }
 
     .overlay {
@@ -127,7 +150,8 @@
       box-shadow: 0 10px 40px rgba(232, 107, 164, 0.3);
     }
 
-    .box-pay h3 { color: #E86BA4; font-family: 'Great Vibes'; font-size: 7vw; margin-bottom: 12px; }
+    .box-pay h3 { color: #E86BA4; font-family: 'Great Vibes'; font-size: 7vw; margin-bottom: 8px; }
+    .box-pay p.sub { font-size: 3.5vw; margin-bottom: 15px; color: #C77A9E; }
     .pay-number {
       background: #FAD4E6;
       padding: 12px;
@@ -146,6 +170,7 @@
       .title { font-size: 50px; }
       .subtitle, .line, .button, .pay-number { font-size: 16px; }
       .section-name { font-size: 28px; }
+      .mini-btn { font-size: 14px; }
       .box-pay h3 { font-size: 32px; }
     }
   </style>
@@ -172,28 +197,36 @@
       <p class="subtitle">@annx.llvl 𓆩♡𓆪</p>
     </div>
 
-    <!-- AHORA SON 3 PRODUCTOS SEPARADOS -->
     <div class="frame">
       <h2 class="section-name">Caligrafías</h2>
       <div class="line"><span>Curvos</span><span class="amount">S/5 / 200 💎</span></div>
       <div class="line"><span>Objeto</span><span class="amount">S/5 / 200 💎</span></div>
       <div class="line"><span>Temáticos</span><span class="amount">S/5 / 200 💎</span></div>
-      <button class="button button-pink" onclick="showPay('5.00', 'Caligrafia')">💖 Comprar</button>
+      <button class="button button-pink" onclick="showPay()">💖 Comprar</button>
     </div>
 
     <div class="frame">
       <h2 class="section-name">Caligrafía Simple</h2>
       <div class="line"><span>c/u</span><span class="amount">S/3 / 100 💎</span></div>
-      <button class="button button-pink" onclick="showPay('3.00', 'Caligrafia Simple')">💖 Comprar</button>
+      <button class="button button-pink" onclick="showPaySimple()">💖 Comprar</button>
     </div>
 
     <a class="button button-white" href="https://wa.me/message/2BUTTKQYZXH4K1">💌 Escríbeme por WhatsApp</a>
 
   </div>
 
+  <!-- MODAL CON 3 MINI BOTONES -->
   <div id="payOverlay" class="overlay">
     <div class="box-pay">
-      <h3>Métodos de Pago</h3>
+      <h3>Elige tu Caligrafía</h3>
+      <p class="sub">Todos a S/5 / 200 💎</p>
+      
+      <div class="mini-btns">
+        <button class="mini-btn" onclick="selectProduct('5.00', 'Curvos')">Curvos</button>
+        <button class="mini-btn" onclick="selectProduct('5.00', 'Objeto')">Objeto</button>
+        <button class="mini-btn" onclick="selectProduct('5.00', 'Temáticos')">Temáticos</button>
+      </div>
+
       <p><b>Yape</b></p>
       <div class="pay-number" id="yapeNumber">932 712 628</div>
       <p style="font-size:3.5vw;">A nombre de: Eliseo B.</p>
@@ -210,13 +243,29 @@
   </div>
 
 <script>
-  function showPay(price, product) {
+  function showPay() {
     document.getElementById('payOverlay').style.display = 'flex';
+    document.getElementById('yapeBtn').href = "#"; // se actualiza al elegir
+  }
+  
+  function showPaySimple() {
+    document.getElementById('payOverlay').style.display = 'flex';
+    document.querySelector('.box-pay h3').innerText = "Caligrafía Simple";
+    document.querySelector('.box-pay p.sub').innerText = "S/3 / 100 💎";
+    document.querySelector('.mini-btns').style.display = "none"; // oculta los 3 botones
+    document.getElementById('yapeBtn').href = `https://www.yape.com.pe/qr/932712628?amount=3.00&concept=Caligrafia Simple`;
+  }
+  
+  function selectProduct(price, product) {
     document.getElementById('yapeBtn').href = `https://www.yape.com.pe/qr/932712628?amount=${price}&concept=${product}`;
+    alert(`Elegiste: ${product} 💖\nAhora puedes pagar con Yape`);
   }
   
   function hidePay() {
     document.getElementById('payOverlay').style.display = 'none';
+    document.querySelector('.mini-btns').style.display = "grid"; // vuelve a mostrar
+    document.querySelector('.box-pay h3').innerText = "Elige tu Caligrafía";
+    document.querySelector('.box-pay p.sub').innerText = "Todos a S/5 / 200 💎";
   }
   
   function copyYape() {
