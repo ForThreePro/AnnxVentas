@@ -5,106 +5,159 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Caligrafos by @annx.llv</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;500&display=swap');
     
     * { margin: 0; padding: 0; box-sizing: border-box; }
     
     body { 
-      background: linear-gradient(180deg, #FFF0F8 0%, #F3E8FF 100%);
-      color: #4C1D95; 
-      font-family: 'Arial', sans-serif;
-      text-align: center;
-      padding: 20px 15px;
+      background: linear-gradient(135deg, #FDF2FF 0%, #F3E8FF 50%, #E9D5FF 100%);
+      font-family: 'Poppins', sans-serif;
+      color: #581C87;
       min-height: 100vh;
+      padding: 0;
     }
     
-    h1 { 
-      font-family: 'Dancing Script', cursive;
-      font-size: 9vw;
-      color: #A855F7;
-      text-shadow: 0 0 10px #E9D5FF;
+    .container {
+      max-width: 500px;
+      margin: 0 auto;
+      padding: 30px 20px;
+    }
+    
+    .header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 10vw;
+      background: linear-gradient(90deg, #C084FC, #A855F7, #9333EA);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 5px;
+    }
+    
+    .user { font-size: 4vw; color: #A855F7; font-weight: 500; }
+    
+    .card {
+      background: rgba(255, 255, 255, 0.6);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(192, 132, 252, 0.3);
+      border-radius: 25px;
+      padding: 25px;
+      margin: 20px 0;
+      box-shadow: 0 8px 32px rgba(168, 85, 247, 0.15);
+    }
+    
+    .card-title {
+      font-size: 5vw;
+      font-weight: 600;
+      color: #7E22CE;
       margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      justify-content: center;
     }
     
-    .sub { font-size: 4vw; margin-bottom: 25px; }
-    
-    .precio {
-      background: #FFFFFF;
-      border: 2px solid #C084FC;
-      border-radius: 20px;
-      padding: 18px;
-      margin: 15px auto;
-      width: 95%;
-      max-width: 400px;
-      box-shadow: 0 4px 15px rgba(168,85,247,0.2);
+    .price {
+      font-size: 8vw;
+      font-weight: 600;
+      color: #9333EA;
+      text-align: center;
+      margin: 15px 0;
     }
     
-    .precio h2 { font-size: 4.5vw; margin-bottom: 8px; }
-    .precio p { font-size: 6vw; font-weight: bold; color: #9333EA; margin-bottom: 12px; }
+    .btn-group { display: flex; flex-direction: column; gap: 12px; }
     
     .btn {
-      background: #A855F7;
-      color: #fff;
-      padding: 14px 25px;
-      border-radius: 25px;
+      padding: 15px;
+      border-radius: 15px;
       text-decoration: none;
-      font-weight: bold;
+      font-weight: 500;
       font-size: 4.5vw;
-      display: block;
-      width: 90%;
-      margin: 10px auto;
-      border: none;
+      text-align: center;
+      transition: 0.3s;
     }
     
-    .btn-whatsapp { background: #25D366; }
-    .btn-yape { background: #720E9E; } /* Morado Yape */
-    .btn:hover { opacity: 0.9; }
+    .btn-yape {
+      background: linear-gradient(90deg, #A855F7, #9333EA);
+      color: white;
+      box-shadow: 0 4px 15px rgba(168, 85, 247, 0.4);
+    }
+    
+    .btn-wa {
+      background: white;
+      color: #9333EA;
+      border: 2px solid #C084FC;
+    }
+    
+    .btn:hover { transform: translateY(-2px); }
+    
+    .info {
+      text-align: center;
+      font-size: 3.5vw;
+      margin: 20px 0;
+      color: #7E22CE;
+    }
     
     .pagos {
-      background: rgba(255,255,255,0.7);
-      border-radius: 15px;
-      padding: 15px;
-      margin: 20px auto;
-      width: 95%;
-      max-width: 400px;
-      font-size: 4vw;
+      text-align: center;
+      font-size: 3.8vw;
+      line-height: 1.8;
     }
     
     @media (min-width: 600px) {
-      h1 { font-size: 45px; }
-      .sub, .precio h2, .btn, .pagos { font-size: 16px; }
-      .precio p { font-size: 28px; }
+      .logo { font-size: 45px; }
+      .user, .card-title, .btn, .info, .pagos { font-size: 16px; }
+      .price { font-size: 35px; }
     }
   </style>
 </head>
 <body>
 
-  <h1>𝙲𝚊𝚕𝚒𝚐𝚛𝚊𝚏𝚘𝚜 𝚋𝚢 @𝚊𝚗𝚡.𝚕𝚟!</h1>
-  <p class="sub">𖹭.ᐟ Diseños únicos para ti 𖹭.ᐟ</p>
+  <div class="container">
+    
+    <div class="header">
+      <h1 class="logo">𝙲𝚊𝚕𝚒𝚐𝚛𝚊𝚏𝚘𝚜</h1>
+      <p class="user">@annx.llv 𓆩♡𓆪</p>
+    </div>
 
-  <div class="precio">
-    <h2>𖹭.ᐟ 𝚃𝚎𝚖𝚊́𝚝𝚒𝚌𝚘𝚜 - 𝚌𝚞𝚛𝚟𝚘𝚜 - 𝚘𝚋𝚓𝚎𝚝𝚘 𝚌/𝚞</h2>
-    <p>𝟻𝘗𝘌𝘕🇵🇪 .ᐟ 𝟸𝟶𝟶 💎</p>
-    <a class="btn btn-yape" href="https://www.yape.com.pe/qr/932712628?amount=20.00&concept=Caligrafia%20Tematica">💜 Pagar con Yape S/20</a>
-    <a class="btn btn-whatsapp" href="https://wa.me/message/2BUTTKQYZXH4K1">📲 Consultar por WhatsApp</a>
-  </div>
+    <div class="card">
+      <h2 class="card-title">𖹭.ᐟ 𝚃𝚎𝚖𝚊́𝚝𝚒𝚌𝚘𝚜 𝙿𝚛𝚎𝚖𝚒𝚞𝚖</h2>
+      <p style="text-align:center; font-size:3.5vw; margin-bottom:10px;">curvos - objeto c/u</p>
+      <p class="price">S/20.00</p>
+      <p style="text-align:center; font-size:4vw; color:#9333EA; margin-bottom:15px;">𝟻𝘗𝘌𝘕 .ᐟ 𝟸𝟶 💎</p>
+      
+      <div class="btn-group">
+        <a class="btn btn-yape" href="https://www.yape.com.pe/qr/932712628?amount=20.00&concept=Caligrafia%20Premium">💜 Pagar con Yape</a>
+        <a class="btn btn-wa" href="https://wa.me/message/2BUTTKQYZXH4K1">📲 Consultar</a>
+      </div>
+    </div>
 
-  <div class="precio">
-    <h2>𖹭.ᐟ 𝚂𝚒𝚖𝚙𝚕𝚎 𝚌/𝚞</h2>
-    <p>𝟹𝘗𝘌𝘕🇵🇪 .ᐟ 𝟷𝟶𝟶 💎</p>
-    <a class="btn btn-yape" href="https://www.yape.com.pe/qr/932712628?amount=10.00&concept=Caligrafia%20Simple">💜 Pagar con Yape S/10</a>
-    <a class="btn btn-whatsapp" href="https://wa.me/message/2BUTTKQYZXH4K1">📲 Consultar por WhatsApp</a>
-  </div>
+    <div class="card">
+      <h2 class="card-title">𖹭.ᐟ 𝚂𝚒𝚖𝚙𝚕𝚎 𝙴𝚕𝚎𝚐𝚊𝚗𝚝𝚎</h2>
+      <p style="text-align:center; font-size:3.5vw; margin-bottom:10px;">c/u</p>
+      <p class="price">S/10.00</p>
+      <p style="text-align:center; font-size:4vw; color:#9333EA; margin-bottom:15px;">𝟹𝘗𝘌𝘕 .ᐟ 𝟷𝟶𝟶 💎</p>
+      
+      <div class="btn-group">
+        <a class="btn btn-yape" href="https://www.yape.com.pe/qr/932712628?amount=10.00&concept=Caligrafia%20Simple">💜 Pagar con Yape</a>
+        <a class="btn btn-wa" href="https://wa.me/message/2BUTTKQYZXH4K1">📲 Consultar</a>
+      </div>
+    </div>
 
-  <p style="font-size: 4vw; margin: 15px;">𝙿𝚊𝚛𝚊 𝚛𝚎𝚏𝚎𝚛𝚎𝚗𝚌𝚒𝚊𝚜 𝚘 𝚖𝚘𝚗𝚎𝚍𝚊𝚜 𝚊𝚕 𝚙𝚛𝚒𝚟!</p>
+    <p class="info">𝙿𝚊𝚛𝚊 𝚛𝚎𝚏𝚎𝚛𝚎𝚗𝚌𝚒𝚊𝚜 𝚘 𝚖𝚘𝚗𝚎𝚍𝚊𝚜 𝚎𝚜𝚌𝚛𝚒́𝚋𝚎𝚖𝚎 𝚊𝚕 𝚙𝚛𝚒𝚟 ✨</p>
 
-  <div class="pagos">
-    <h3>Métodos de pago:</h3>
-    <p><b>Yape - 💎</b><br>
-    932 712 628<br>
-    Elíseo B.<br><br>
-    1434157249<br>
-    BabyㅤAnnㅤଓ 💎</p>
+    <div class="card pagos">
+      <h3 style="color:#7E22CE; margin-bottom:10px;">Métodos de pago</h3>
+      <p><b>Yape 💜</b><br>
+      932 712 628<br>
+      Elíseo B.<br><br>
+      1434157249<br>
+      BabyㅤAnnㅤଓ 💎</p>
+    </div>
+
   </div>
 
 </body>
